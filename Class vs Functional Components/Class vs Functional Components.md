@@ -11,7 +11,7 @@ Class components are ES6 classes that extend `React.Component` and have the abil
 - **Syntax:** Requires more boilerplate code due to the class syntax.
   
 - ### **Example of a Class Component:**
- ```
+ ``` JSX
  import React, { Component } from 'react';
 
 class MyComponent extends Component {
@@ -47,7 +47,7 @@ Functional components are simpler and are written as JavaScript functions. They 
 - **Simpler Syntax:** Functional components are concise and require less boilerplate.
   
 ### **Example of a Function Component:**
-```
+``` JSX
 import React, { useState } from 'react';
 const MyComponent = () => {
   const [count, setCount] = useState(0);
