@@ -44,3 +44,34 @@ The `useContext` Hook in React is a built-in hook that allows functional compone
 ```javascript
 const contextValue = useContext(MyContext);
 ```
+### MyContext  
+- The context object created using `React.createContext`.
+
+### contextValue  
+- The value provided by the nearest `Provider` component in the component tree.
+
+---
+
+## Steps to Use `useContext`
+
+### Create a Context  
+Use `React.createContext` to create a context object.
+
+```
+const MyContext = React.createContext(MyValue);
+```
+### Provide a Value 
+Use the `Provider` component to supply a value to the context.
+
+```
+<MyContext.Provider value={value}>
+  <ChildComponent />
+</MyContext.Provider>
+```
+### Consume the Value  
+Use `useContext` in any functional component to access the context value.
+```
+const value = useContext(MyContext);
+```
+
+
