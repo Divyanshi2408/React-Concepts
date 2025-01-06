@@ -30,7 +30,7 @@ The `useContext` Hook in React is a built-in hook that allows functional compone
     </MyContext.Consumer>
     ```
   - With `useContext`, it becomes:  
-    ```javascript
+    ```
     const value = useContext(MyContext);
     ```
 
@@ -41,7 +41,7 @@ The `useContext` Hook in React is a built-in hook that allows functional compone
 
 ## Syntax
 
-```javascript
+```
 const contextValue = useContext(MyContext);
 ```
 ### MyContext  
