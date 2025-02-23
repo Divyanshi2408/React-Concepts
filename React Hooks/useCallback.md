@@ -45,3 +45,36 @@ const Counter = () => {
 
 export default Counter;
 ```
+## Issue Without `useCallback`  
+Every time the component **renders**, `handleClick` is **recreated**, leading to **unnecessary re-renders** in child components.  
+
+---
+
+## ✅ With `useCallback` (Optimized)  
+By using `useCallback`, we ensure that `handleClick` is **only re-created when `count` changes**.  
+
+```javascript
+import React, { useState, useCallback } from "react";
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(prevCount => prevCount + 1);
+  }, []);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+# Benefits of `useCallback`  
+
+✅ **Performance Optimization**: Prevents unnecessary function re-creation, improving performance.  
+✅ **Useful in Memoized Components**: Works well with `React.memo` to prevent unnecessary re-renders.  
+✅ **Stable Function References**: Ensures child components receive the same function reference if dependencies haven't changed.  
