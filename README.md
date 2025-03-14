@@ -20,7 +20,7 @@ If you find this helpful or have suggestions, feel free to:
 - Submit a pull request
 
 ## 📬 Connect with Me
-- **LinkedIn:** [Your Profile](https://www.linkedin.com/in/divyanshi-pal/)
+- **LinkedIn:** [Profile](https://www.linkedin.com/in/divyanshi-pal/)
 - **Email:** Divyanshipal2808gmail.com
 
 ---
