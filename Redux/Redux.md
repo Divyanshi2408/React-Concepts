@@ -1,10 +1,31 @@
 # Redux
 
 ## Overview
-Redux is a predictable state container for JavaScript applications. It helps manage the state of an application in a centralized store.
+Redux is a state management library for JavaScript applications, commonly used with React but also compatible with Angular, Vue, and other frameworks. It helps manage the application state in a predictable way using a single source of truth (a centralized store).
 
 ---
+### Core Principles of Redux 
 
+**Single Source of Truth:** The entire state of your application is stored in a single object tree within the Redux store, making it easy to track and manage the application's data. 
+
+**State is Read-only:** The state within the Redux store should never be directly modified. Instead, the only way to update the state is to dispatch an action, which describes what happened, and then the reducers, pure functions, handle the state transformation. 
+
+**Changes are Made with Pure Functions:** To specify how the state tree is transformed by actions, you write pure functions called reducers. These reducers take the previous state and an action, and return the next state, ensuring predictable and manageable state updates.
+
+---
+### Key Concepts of Redux
+
+**Store:** Holds the application's state.
+
+**Actions:** Objects that describe state changes(what happend) ( { type: "INCREMENT" }) tiny bit of information that is required to mention what has happened .          
+
+**Reducers:**	Pure functions that determine state changes based on actions.
+
+**Dispatch:**	Sends actions to the store to update the state.
+
+**Selectors:**	Functions that retrieve specific data from the store.
+
+---
 ## Installation
 To install Redux and React-Redux:
 ```sh
