@@ -159,7 +159,8 @@ Used in most cases	Used when precise layout tweaks are needed
 ---
 
 ## 9. What is the useImperativeHandle hook and when is it used?
-The useImperativeHandle hook is used with forwardRef to customize what values/methods are exposed to a parent component when it uses a ref on a child component.
+- useImperativeHandle is a React hook that allows a child component to expose specific methods or properties to its parent via ref.
+- It’s used with forwardRef to give controlled access — for example, exposing a focusInput function to the parent without revealing the whole child component’s internals.
 
 Normally, refs expose the DOM node. But with useImperativeHandle, you can control what gets exposed — for example, a custom function like focus().
 
@@ -188,6 +189,10 @@ ref.current.focusInput(); // Custom exposed method
 Use case:
 When the parent needs to call imperative methods (e.g., .focus(), .scrollTo(), .reset()), but the child is a custom component, not a regular DOM node.
 
+### What is forwardRef?
+- Normally, ref only works with DOM elements (like <input /> or <div />), not with custom components.
+- forwardRef allows a parent component to pass a ref into a child component, so that the parent can directly interact with a DOM element inside the child.
+
 ---
 
 ## 10. What is the useId hook and what problem does it solve?
@@ -204,6 +209,8 @@ Even if the component renders multiple times or in different environments (clien
 ---
 ## 11. What is the useTransition hook in React?
 The useTransition hook is used to mark a state update as non-urgent (or "low priority"), allowing React to keep the UI responsive during heavy or slow updates.
+- useTransition is a React hook that lets you mark state updates as non-urgent.
+It allows React to prioritize more important updates first (like user input) and delay slower ones (like rendering large components), improving responsiveness.
 
 It helps in improving performance and user experience when rendering large lists, filtering data, or doing anything that might cause a delay.
 ```
@@ -231,6 +238,8 @@ This keeps the typing smooth and responsive even if filtering is slow.
 ---
 ## 12. What does the useDeferredValue hook do, and when might you use it?
 The useDeferredValue hook is used to defer updating a value until the browser has time to handle it, keeping the UI fast and responsive — especially when dealing with expensive rendering tasks.
+- useDeferredValue is a React hook that delays updating a value until the browser is less busy.
+It helps improve performance by deferring non-urgent updates, like filtering large lists, while keeping urgent updates like typing fast and responsive.
 
 It's useful when you have a value (like input text) that updates quickly, but the UI based on it (like a large filtered list) is slow to render.
 
@@ -250,6 +259,11 @@ const filteredList = useMemo(() => {
 }, [deferredInput]);
 ```
 This way, the input updates instantly, and the filtering is deferred — preventing lag.
+
+- Use these hooks when you need to set priority
+- If you have control over the state update — useTransition.
+- For third party update where you have no control over state — useDeferredValue.
+  
 ---
 ## 13. What is the useSyncExternalStore hook and when would you use it?
 The useSyncExternalStore hook is used to subscribe to an external store and ensure consistent state between server and client — especially in concurrent rendering.
