@@ -3,6 +3,8 @@
 ## Overview
 Lazy loading in React is a technique used to load components **only when they are needed**, improving performance and reducing the initial bundle size. This helps in optimizing the user experience, especially in large applications.
 
+---
+
 ## React's `React.lazy()`
 React provides the `React.lazy()` function to dynamically import components only when they are rendered.
 
@@ -10,6 +12,8 @@ React provides the `React.lazy()` function to dynamically import components only
 ```jsx
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 ```
+
+---
 
 ## How to Use Lazy Loading
 ### Basic Example
@@ -32,10 +36,20 @@ function App() {
 export default App;
 ```
 
-## Key Points
-- **`React.lazy()`** is used to dynamically import a component.
-- **`Suspense`** is required to wrap lazy-loaded components and provide a fallback UI while loading.
-- Improves performance by splitting the JavaScript bundle.
+---
+
+## Suspense 
+The `Suspense` component is used to wrap lazy-loaded components and specify a fallback UI while the component is being loaded.
+
+```jsx
+<Suspense fallback={<div>Loading...</div>}>
+  <LazyComponent />
+</Suspense>
+```
+
+- `fallback`: A React element (like `<div>Loading...</div>`) to display while the lazy component is loading.
+
+---
 
 ## Advanced: Lazy Loading Routes with React Router
 ```jsx
@@ -61,17 +75,26 @@ function App() {
 export default App;
 ```
 
+---
+
 ## When to Use Lazy Loading
-✅ Large applications with multiple components.
-✅ Pages or components that are not required immediately (e.g., modals, dashboards).
+✅ Large applications with multiple components.  
+✅ Pages or components that are not required immediately (e.g., modals, dashboards).  
 ✅ Reducing the initial load time of the application.
 
+---
+
 ## When Not to Use Lazy Loading
-❌ Small applications where all components load quickly.
+❌ Small applications where all components load quickly.  
 ❌ Frequently used components that should be available instantly.
+
+---
 
 ## React Version
 Lazy loading with `React.lazy()` is available in **React 16.6+**.
 
+---
+
 ## References
 - [React Docs: Lazy Loading](https://react.dev/reference/react/lazy)
+- [React Docs: Suspense](https://react.dev/reference/react/Suspense)
