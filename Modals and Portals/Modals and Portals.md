@@ -3,8 +3,14 @@
 ## Overview
 Modals in React are UI components that overlay the main content to display additional information. React Portals allow rendering these modals (or other components) outside the main DOM hierarchy while maintaining their functionality.
 
+### What is Modal?
+A modal is a UI overlay component that appears above the current page content and blocks interaction with the background until it is dismissed.
+In React, modals are often implemented using portals to avoid layout and z-index issues.
+
 ## What is a Portal?
 A **React Portal** enables rendering a component **outside** its parent DOM node but keeping it within the React component tree.
+- React Portals allow rendering a component into a different part of the DOM tree, outside the root element.
+- It’s mainly used for UI elements like modals, tooltips, and popovers that need to appear above other content.
 
 ### Syntax
 ```jsx
