@@ -43,9 +43,8 @@ If you found this helpful or have suggestions:
 
 ### 🛠️ How to Use
 
-1. Browse the `.md` files inside folders like `frontend/`, `backend/`, etc.
-2. Use this guide as a quick refresher, study material, or interview prep.
-3. Clone or star the repo to keep it handy!
+1. Use this guide as a quick refresher, study material, or interview prep.
+2. Clone or star the repo to keep it handy!
 
 ---
 
