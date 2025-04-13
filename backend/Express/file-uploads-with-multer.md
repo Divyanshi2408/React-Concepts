@@ -77,9 +77,10 @@ html
 ```
 
 ### Summary
-- Feature	Description
-- upload.single('fieldname')	Upload a single file
-- upload.array('fieldname', n)	Upload multiple files
-- storage	Define destination and filename format
-- fileFilter	Restrict uploads to certain file types
-- limits	Limit file size or number of files
+| Feature |	Description |
+| ------- | ------------- |
+| upload.single('fieldname')	| Upload a single file |
+| upload.array('fieldname', n)	| Upload multiple files |
+| storage	| Define destination and filename format |
+| fileFilter |	Restrict uploads to certain file types |
+| limits |	Limit file size or number of files |
